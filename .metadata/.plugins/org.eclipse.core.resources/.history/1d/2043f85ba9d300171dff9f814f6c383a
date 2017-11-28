@@ -1,0 +1,11 @@
+package com.cts.room.service.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cts.room.service.entity.RoomScheduler;
+
+
+
+public interface RoomSchedulerRepository extends JpaRepository<RoomScheduler, Integer>{
+
+}

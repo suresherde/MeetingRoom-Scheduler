@@ -1,0 +1,12 @@
+package com.cts.room.service.model;
+
+import javax.persistence.Column;
+
+public class Rooms {
+
+	
+	private String roomName;
+	
+	private Integer roomStatusId;
+	
+}

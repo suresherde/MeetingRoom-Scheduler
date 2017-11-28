@@ -1,0 +1,10 @@
+package com.cts.room.service.model;
+
+import javax.persistence.Entity;
+
+@Entity(name="rooms")
+public class Room {
+	
+	
+
+}

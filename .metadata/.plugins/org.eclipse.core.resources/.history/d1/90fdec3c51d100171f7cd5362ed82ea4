@@ -1,0 +1,14 @@
+package com.cts.room.service.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.cts.room.service.dao.RoomRepository;
+
+@Service
+@Transactional
+public class RoomService {
+
+	private final RoomRepository roomRepository;
+}

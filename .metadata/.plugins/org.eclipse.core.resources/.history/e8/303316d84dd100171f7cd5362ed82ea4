@@ -1,0 +1,6 @@
+package com.cts.room.service.controller;
+
+@RestController
+public class RoomServiceController {
+
+}

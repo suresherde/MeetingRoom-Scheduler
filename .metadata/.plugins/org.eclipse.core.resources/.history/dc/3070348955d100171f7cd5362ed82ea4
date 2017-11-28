@@ -1,0 +1,9 @@
+package com.cts.room.service.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.cts.room.service.model.Room;
+
+public interface RoomRepository extends CrudRepository<Room, Integer>{
+
+}

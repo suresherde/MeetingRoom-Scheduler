@@ -1,0 +1,27 @@
+package com.cts.room.service.service;
+
+import org.springframework.stereotype.Service;
+
+import com.cts.room.service.entity.Room;
+import com.cts.room.service.entity.RoomScheduler;
+import com.cts.room.service.model.RoomSchedulers;
+import com.cts.room.service.model.Rooms;
+
+@Service
+public class RoomSchedulerService {
+
+	private RoomScheduler roomScheduler; 
+	
+	public RoomScheduler addSchedule(RoomSchedulers roomSchedulers){
+		roomScheduler= new RoomScheduler();
+		roomScheduler.setRooms(roomSchedulers.getRooms());	
+		roomScheduler.setLoginId(roomSchedulers.getLoginId());
+		
+		roomScheduler.setRoomSchedulerStartDtg(roomSchedulers.getRoomSchedulerStartDtg());
+		roomScheduler.setRoomSchedulerEndDtg(roomSchedulers.getRoomSchedulerEndDtg());
+		
+		return room;
+		
+	}
+
+}

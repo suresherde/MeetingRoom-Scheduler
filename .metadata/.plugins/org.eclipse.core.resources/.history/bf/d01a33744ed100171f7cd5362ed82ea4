@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: room-service
+
+server:
+  port: 7001
+  
+  spring:
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: mysql
+    url: jdbc:mysql://localhost:3306/room_scheduler
+    username: root
+    password: pass!1
+    driverClassName: org.postgresql.Driver
