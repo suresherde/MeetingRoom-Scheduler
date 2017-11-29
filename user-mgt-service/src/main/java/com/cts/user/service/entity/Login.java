@@ -1,10 +1,16 @@
 package com.cts.user.service.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -35,21 +41,36 @@ public class Login {
 	@Column(name="login_phoneno")
 	private String loginPhoneNo;
 	
-	public Login() {
-		
-	}
+	@ManyToOne
+	@JoinColumn(name="role_id", referencedColumnName="role_id")
+	private Role roles;
 	
-	public Login(String loginFName, String loginLName, String loginName, String loginPassword, String loginEmail,
-			String loginPhoneNo) {
+	
+	public Login(Integer loginId, String loginFName, String loginLName, String loginName, String loginPassword,
+			String loginEmail, String loginPhoneNo, Role roles) {
 		super();
+		this.loginId = loginId;
 		this.loginFName = loginFName;
 		this.loginLName = loginLName;
 		this.loginName = loginName;
 		this.loginPassword = loginPassword;
 		this.loginEmail = loginEmail;
 		this.loginPhoneNo = loginPhoneNo;
+		this.roles = roles;
 	}
-	
+
+	public Role getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Role roles) {
+		this.roles = roles;
+	}
+
+	public Login() {
+		
+	}
+
 	public Integer getLoginId() {
 		return loginId;
 	}

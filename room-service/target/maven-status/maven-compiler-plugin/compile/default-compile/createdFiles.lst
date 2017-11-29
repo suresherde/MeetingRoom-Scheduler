@@ -1,6 +1,12 @@
-com\cts\room\service\model\Rooms.class
-com\cts\room\service\model\RoomBlocker.class
-com\cts\room\service\repository\RoomServiceRepository.class
-com\cts\room\service\controller\RoomServiceController.class
+com\cts\room\service\service\RoomService.class
+com\cts\room\service\entity\Room.class
 com\cts\room\service\RoomServiceApplication.class
-com\cts\room\service\model\Room.class
+com\cts\room\service\repository\RoomSchedulerRepository.class
+com\cts\room\service\model\Rooms.class
+com\cts\room\service\model\RoomSchedulers.class
+com\cts\room\service\resource\RoomSchedulerResource.class
+com\cts\room\service\resource\RoomResource.class
+com\cts\room\service\entity\RoomScheduler.class
+com\cts\room\service\repository\RoomRepository.class
+com\cts\room\service\repositoryImpl\RoomSchedulerRepositoryImpl.class
+com\cts\room\service\service\RoomSchedulerService.class

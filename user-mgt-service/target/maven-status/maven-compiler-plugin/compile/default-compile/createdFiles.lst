@@ -1,0 +1,9 @@
+com\cts\user\service\repository\LoginRepository.class
+com\cts\user\service\model\Logins.class
+com\cts\user\service\UserManagementServiceApplication.class
+com\cts\user\service\entity\Login.class
+com\cts\user\service\model\Roles.class
+com\cts\user\service\resource\LoginResource.class
+com\cts\user\service\util\ServiceUitliaries.class
+com\cts\user\service\entity\Role.class
+com\cts\user\service\service\LoginService.class

@@ -12,19 +12,19 @@ import com.cts.user.service.model.Logins;
 
 @Service
 public class LoginService {
+	private Login login;
 
 public Login addLogin(Logins logins){
 		
-		Login login = new Login();
+		login = new Login();
 		login.setLoginFName(logins.getLoginFName());
 		login.setLoginLName(logins.getLoginLName());
 		login.setLoginEmail(logins.getLoginEmail());
 		login.setLoginName(logins.getLoginName());
 		login.setLoginPassword(logins.getLoginPassword());
-		logins.setLoginPhoneNo(logins.getLoginPhoneNo());
-
+		login.setLoginPhoneNo(logins.getLoginPhoneNo());
+		login.setRoles(logins.getRoles());
 		return login;
-		
 	}
 
 public Login getLogin(Logins logins){

@@ -1,7 +1,11 @@
 package com.cts.user.service.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Transient;
+
+import com.cts.user.service.entity.Role;
 
 public class Logins {
 
@@ -18,14 +22,16 @@ public class Logins {
 	
 	private String loginPhoneNo;
 	
+	private Role roles;
 	
 	
 	public Logins() {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	public Logins(String loginFName, String loginLName, String loginName, String loginPassword, String loginEmail,
-			String loginPhoneNo) {
+			String loginPhoneNo, Role roles) {
 		super();
 		this.loginFName = loginFName;
 		this.loginLName = loginLName;
@@ -33,7 +39,31 @@ public class Logins {
 		this.loginPassword = loginPassword;
 		this.loginEmail = loginEmail;
 		this.loginPhoneNo = loginPhoneNo;
+		this.roles = roles;
 	}
+
+
+
+
+
+
+	public Role getRoles() {
+		return roles;
+	}
+
+
+
+
+
+
+	public void setRoles(Role roles) {
+		this.roles = roles;
+	}
+
+
+
+
+
 
 	public String getLoginFName() {
 		return loginFName;
@@ -82,6 +112,16 @@ public class Logins {
 	public void setLoginPhoneNo(String loginPhoneNo) {
 		this.loginPhoneNo = loginPhoneNo;
 	}
+
+
+
+	
+
+
+
+
+
+	
 
 
 }
