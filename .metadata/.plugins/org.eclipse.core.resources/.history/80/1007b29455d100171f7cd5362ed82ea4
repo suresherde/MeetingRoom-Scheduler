@@ -1,0 +1,5 @@
+package com.cts.room.service.repository;
+
+public class RoomServiceRepository {
+
+}

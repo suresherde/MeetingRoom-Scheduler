@@ -1,0 +1,7 @@
+package com.cts.room.service.service;
+
+@Service
+@Transactional
+public class RoomService {
+
+}

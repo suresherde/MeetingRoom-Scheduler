@@ -1,0 +1,43 @@
+package com.cts.room.service.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name="rooms")
+public class Room {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int room_id;
+	private String room_name;
+	private int room_status_id;
+	
+	
+	public int getRoom_id() {
+		return room_id;
+	}
+	public void setRoom_id(int room_id) {
+		this.room_id = room_id;
+	}
+	
+	
+	
+	
+	
+	public String getRoom_name() {
+		return room_name;
+	}
+	public void setRoom_name(String room_name) {
+		this.room_name = room_name;
+	}
+	public int getRoom_status_id() {
+		return room_status_id;
+	}
+	public void setRoom_status_id(int room_status_id) {
+		this.room_status_id = room_status_id;
+	}
+	
+
+}

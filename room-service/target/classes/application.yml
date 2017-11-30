@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: room-service
+
+server:
+  port: 7001
+  

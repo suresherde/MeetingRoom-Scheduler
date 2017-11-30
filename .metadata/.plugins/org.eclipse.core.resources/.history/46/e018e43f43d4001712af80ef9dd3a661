@@ -1,0 +1,11 @@
+package com.cts.user.service;
+
+@SpringBootApplication
+public class UserManagementServiceApplication {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

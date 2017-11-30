@@ -1,0 +1,8 @@
+package com.cts.room.service.model;
+
+@Entity(name="rooms")
+public class Room {
+	
+	
+
+}

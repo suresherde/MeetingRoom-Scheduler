@@ -1,0 +1,5 @@
+package com.cts.room.service.dao;
+
+public interface RoomRepository {
+
+}

@@ -1,0 +1,12 @@
+package com.cts.room.service.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="room", catalog="room_scheduler")
+public class Room {
+	
+	
+
+}
