@@ -1,5 +1,0 @@
-package com.cts.room.service.repositoryImpl;
-
-public class RoomSchedulerRepositoryImpl {
-
-}

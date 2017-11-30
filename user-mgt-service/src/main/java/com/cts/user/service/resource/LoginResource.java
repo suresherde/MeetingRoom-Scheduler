@@ -3,15 +3,17 @@ package com.cts.user.service.resource;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.client.RestTemplate;
 
 import com.cts.user.service.entity.Login;
 import com.cts.user.service.model.Logins;
+import com.cts.user.service.model.Rooms;
 import com.cts.user.service.repository.LoginRepository;
 import com.cts.user.service.service.LoginService;
 
@@ -25,16 +27,28 @@ public class LoginResource {
 	@Autowired
 	LoginService loginService;
 	
+	@Autowired
+	RestTemplate restTemplate;
+	
+	
 	@GetMapping("/getAllLogin")
 	public List<Login> getAllLogin(){
 		return  loginRepository.findAll();
 	}
 	
 	@PostMapping("/getLoginByName")
-	public boolean getLoginByLoginName(@RequestBody final Logins logins){
+	public List<Rooms> getLoginByLoginName(@RequestBody final Logins logins){
 		Login login = loginService.getLogin(logins);
 		List<Login> loginResultSet= loginRepository.findByLoginNamePassword(login.getLoginName());
-		return loginService.validationPassword(logins, loginResultSet);
+				
+		if(loginService.validationPassword(logins, loginResultSet))
+		{
+			String url = "http://room-service/rest/db/room/getAllRoom";
+			List<Rooms> romme=restTemplate.getForObject(url, List.class);
+			return romme;
+		}else{
+			return null;
+		}
 	}
 	
 	

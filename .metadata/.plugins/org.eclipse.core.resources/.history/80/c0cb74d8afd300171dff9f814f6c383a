@@ -1,9 +1,0 @@
-package com.cts.room.service.repositoryImpl;
-
-import com.cts.room.service.repository.RoomSchedulerRepository;
-
-public class RoomSchedulerRepositoryImpl implements RoomSchedulerRepository{
-	
-	
-
-}
