@@ -64,6 +64,17 @@ public class RoomSchedulerResource {
 		return roomSchedulerRepository.findByRoomSchedulerStartEndDtg(roomScheduler.getRoomSchedulerStartDtg(),roomScheduler.getRoomSchedulerEndDtg());
 	}
 	
+	@PostMapping("/getSchedulerByDatesByRoomName")
+	public List<RoomScheduler> getSchedulerByDatesByRoomName(@RequestBody final RoomSchedulers roomSchedulers){
+		RoomScheduler roomScheduler = roomSchedulerService.addSchedule(roomSchedulers);
+		System.out.println(roomScheduler.getRooms().getRoomName());
+		System.out.println(roomScheduler.getRoomSchedulerStartDtg());
+		System.out.println(roomScheduler.getRoomSchedulerEndDtg());
+		
+		return roomSchedulerRepository.findByRoomSchedulerByDtgAndRoom(roomScheduler.getRooms().getRoomName(), roomScheduler.getRoomSchedulerStartDtg(),roomScheduler.getRoomSchedulerEndDtg());
+		
+	}
+	
 	@PostMapping("/updateScheduler")
 	public List<RoomScheduler> updateSchedule(@RequestBody final RoomSchedulers roomSchedulers){
 		RoomScheduler roomScheduler = roomSchedulerService.addSchedule(roomSchedulers);

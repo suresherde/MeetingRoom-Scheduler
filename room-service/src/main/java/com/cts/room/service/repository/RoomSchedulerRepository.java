@@ -20,6 +20,11 @@ public interface RoomSchedulerRepository extends JpaRepository<RoomScheduler, In
 	
 	@Query(value="select * from room_scheduler where room_scheduler_start_dtg = ?1  and room_scheduler_end_dtg= ?2", nativeQuery=true)
 	List<RoomScheduler> findByRoomSchedulerStartEndDtg(java.util.Date roomSchedulerStartDtg, java.util.Date roomSchedulerEndDtg);
+	
+	@Query(value="select * from room_scheduler join room using (room_id) "
+			+ "where room_name = ?1 and "
+			+ "room_scheduler_start_dtg >= ?2  and room_scheduler_end_dtg <= ?3", nativeQuery=true)
+	List<RoomScheduler> findByRoomSchedulerByDtgAndRoom(String roomName, java.util.Date roomSchedulerStartDtg, java.util.Date roomSchedulerEndDtg);
 
 	
 

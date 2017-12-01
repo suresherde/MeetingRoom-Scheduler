@@ -176,6 +176,13 @@ public class RoomSchedulerRepositoryImpl implements RoomSchedulerRepository{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<RoomScheduler> findByRoomSchedulerByDtgAndRoom(String roomName, Date roomSchedulerStartDtg,
+			Date roomSchedulerEndDtg) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 

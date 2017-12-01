@@ -5,3 +5,11 @@ spring:
 server:
   port: 7002
   
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:7003/eureka/
+  instance:
+    hostname: localhost
