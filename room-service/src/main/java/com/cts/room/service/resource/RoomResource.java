@@ -45,11 +45,20 @@ public class RoomResource {
 		return  roomRepository.findByRoomStatusId(roomStatusId);
 	}
 		
-	@PostMapping("/add")
+	@PostMapping("/addRoom")
 	public List<Room> addRoom(@RequestBody final Rooms rooms){
 		Room room = roomService.addRoom(rooms);
 		roomRepository.save(room);
 		return roomRepository.findByRoomName(rooms.getRoomName());
+	}
+	
+	@PostMapping("/deleteRoom")
+	public boolean deleteRoom(@RequestBody final Rooms rooms){
+		
+		List <Room> room = getRoomByName(rooms.getRoomName());
+		
+		roomRepository.delete(room.get(0).getRoomId());
+		return true;
 	}
 	
 	// Edit

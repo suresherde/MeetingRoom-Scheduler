@@ -183,7 +183,20 @@ public class RoomSchedulerRepositoryImpl implements RoomSchedulerRepository{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
+
+	@Override
+	public List<RoomScheduler> findByRoomSchedulerId(int roomSchedulerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteScheduleByDatesAndByLoginId(Integer loginId, Date roomSchedulerStartDtg,
+			Date roomSchedulerEndDtg) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 }

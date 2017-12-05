@@ -50,6 +50,15 @@ public class RoomSchedulerResource {
 		return roomSchedulerRepository.findByRoomSchedulerStartDtg(fromDate,roomSchedulerService.adding23Hours(fromDate));
 	}
 	
+	@GetMapping("/getScheduleById/{roomSchedulerId}")
+	public List<RoomScheduler> getScheduleById(@PathVariable("roomSchedulerId") final Integer roomSchedulerId){
+		
+		System.out.println("roomSchedulerId====="+roomSchedulerId);
+		
+		return roomSchedulerRepository.findByRoomSchedulerId(roomSchedulerId);
+	}
+	
+	
 	
 	@PostMapping("/addScheduler")
 	public List<RoomScheduler> addSchedule(@RequestBody final RoomSchedulers roomSchedulers){
@@ -83,6 +92,26 @@ public class RoomSchedulerResource {
 	}
 	
 	
+	@PostMapping("/deleteSchedulerById")
+	public boolean deleteSchedulerById(@RequestBody final RoomSchedulers roomSchedulers){
+		roomSchedulerRepository.delete(roomSchedulers.getRoomSchedulerId());
+		return true;
+	}
+	
+	@PostMapping("/deleteScheduleByStartEndTime")
+	public boolean deleteScheduleByStartEndTime(@RequestBody final RoomSchedulers roomSchedulers){
+		List<RoomScheduler> roomScheduler=getSchedule(roomSchedulers);
+		roomSchedulerRepository.delete(roomScheduler.get(0).getRoomSchedulerId());
+		return true;
+	}
+	// Is not working yet to do changes.
+	@PostMapping("/deleteScheduleByStartEndTimeByLoginId")
+	public boolean deleteSchedulerByOwner(@RequestBody final RoomSchedulers roomSchedulers){
+		roomSchedulerRepository.deleteScheduleByDatesAndByLoginId(roomSchedulers.getLoginId(),roomSchedulers.getRoomSchedulerStartDtg(),
+				roomSchedulers.getRoomSchedulerEndDtg());
+		
+		return true;
+	}
 	
 
 }
