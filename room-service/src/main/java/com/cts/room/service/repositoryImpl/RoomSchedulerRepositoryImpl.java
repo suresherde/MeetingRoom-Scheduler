@@ -1,5 +1,6 @@
 package com.cts.room.service.repositoryImpl;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -163,38 +164,48 @@ public class RoomSchedulerRepositoryImpl implements RoomSchedulerRepository{
 		return false;
 	}
 
-	@Override
-	public List<RoomScheduler> findByRoomSchedulerStartDtg(Date roomSchedulerStartDtg, Date roomSchedulerEndDtg) {
-		
-		
-		
-		return null;
-	}
-
-	@Override
-	public List<RoomScheduler> findByRoomSchedulerStartEndDtg(Date roomSchedulerStartDtg, Date roomSchedulerEndDtg) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<RoomScheduler> findByRoomSchedulerByDtgAndRoom(String roomName, Date roomSchedulerStartDtg,
-			Date roomSchedulerEndDtg) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public List<RoomScheduler> findByRoomSchedulerId(int roomSchedulerId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
+
 	@Override
-	public void deleteScheduleByDatesAndByLoginId(Integer loginId, Date roomSchedulerStartDtg,
-			Date roomSchedulerEndDtg) {
+	public List<RoomScheduler> findByRoomSchedulerStartDtg(LocalDateTime roomSchedulerStartDtg,
+			LocalDateTime roomSchedulerEndDtg) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<RoomScheduler> findByRoomSchedulerStartEndDtg(LocalDateTime roomSchedulerStartDtg,
+			LocalDateTime roomSchedulerEndDtg) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<RoomScheduler> findByRoomSchedulerByDtgAndRoom(String roomName, LocalDateTime roomSchedulerStartDtg,
+			LocalDateTime roomSchedulerEndDtg) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteScheduleByDatesAndByLoginId(Integer loginId, LocalDateTime roomSchedulerStartDtg,
+			LocalDateTime roomSchedulerEndDtg) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<RoomScheduler> findByRoomSchedulerStartEndDtgLoginId(LocalDateTime roomSchedulerStartDtg,
+			LocalDateTime roomSchedulerEndDtg, Integer loginId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

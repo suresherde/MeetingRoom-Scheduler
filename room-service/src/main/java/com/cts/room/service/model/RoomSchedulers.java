@@ -14,9 +14,9 @@ import com.cts.room.service.entity.Room;
 
 public class RoomSchedulers {
 		
-	private java.util.Date  roomSchedulerStartDtg;
+	private LocalDateTime  roomSchedulerStartDtg;
 	
-	private java.util.Date  roomSchedulerEndDtg;
+	private LocalDateTime  roomSchedulerEndDtg;
 	
 	private Integer loginId;
 	
@@ -37,19 +37,21 @@ public class RoomSchedulers {
 		this.roomSchedulerId = roomSchedulerId;
 	}
 
-	public java.util.Date getRoomSchedulerStartDtg() {
+	
+
+	public LocalDateTime getRoomSchedulerStartDtg() {
 		return roomSchedulerStartDtg;
 	}
 
-	public void setRoomSchedulerStartDtg(java.util.Date roomSchedulerStartDtg) {
+	public void setRoomSchedulerStartDtg(LocalDateTime roomSchedulerStartDtg) {
 		this.roomSchedulerStartDtg = roomSchedulerStartDtg;
 	}
 
-	public java.util.Date getRoomSchedulerEndDtg() {
+	public LocalDateTime getRoomSchedulerEndDtg() {
 		return roomSchedulerEndDtg;
 	}
 
-	public void setRoomSchedulerEndDtg(java.util.Date roomSchedulerEndDtg) {
+	public void setRoomSchedulerEndDtg(LocalDateTime roomSchedulerEndDtg) {
 		this.roomSchedulerEndDtg = roomSchedulerEndDtg;
 	}
 

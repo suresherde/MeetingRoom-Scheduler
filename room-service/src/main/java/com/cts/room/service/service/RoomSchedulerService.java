@@ -1,5 +1,6 @@
 package com.cts.room.service.service;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import org.springframework.stereotype.Service;
@@ -25,9 +26,10 @@ public class RoomSchedulerService {
 		return roomScheduler;
 	}
 	
-	public Date adding23Hours(Date fromDate){
-		Date newDate = new Date(fromDate.getTime() +  85800000L );
-		return newDate;
+	public LocalDateTime adding23Hours(LocalDateTime fromDate){
+		//LocalDateTime newDate = new Date(fromDate.getTime() +  85800000L );
+		//return newDate;
+		return fromDate;
 	}
 
 }

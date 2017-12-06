@@ -1,6 +1,8 @@
 package com.cts.room.service.entity;
 
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,12 +27,12 @@ public class RoomScheduler {
 	private Integer roomSchedulerId;
 	
 	@Column(name="room_scheduler_start_dtg")
-	@Temporal(TemporalType.TIMESTAMP)
-	private java.util.Date roomSchedulerStartDtg;
+	//@Temporal(TemporalType.TIMESTAMP)
+	private LocalDateTime roomSchedulerStartDtg;
 	
 	@Column(name="room_scheduler_end_dtg")
-	@Temporal(TemporalType.TIMESTAMP)
-	private java.util.Date roomSchedulerEndDtg;
+	//@Temporal(TemporalType.TIMESTAMP)
+	private LocalDateTime roomSchedulerEndDtg;
 	@Column(name="login_id")
 	
 	private Integer loginId;
@@ -63,13 +65,18 @@ public class RoomScheduler {
 		this.rooms = rooms;
 	}
 
-	public RoomScheduler(java.util.Date  roomSchedulerStartDtg, java.util.Date  roomSchedulerEndDtg, Integer loginId) {
+	
+	
+	public RoomScheduler(LocalDateTime roomSchedulerStartDtg, LocalDateTime roomSchedulerEndDtg, Integer loginId,
+			String subject, Room rooms) {
 		super();
 		this.roomSchedulerStartDtg = roomSchedulerStartDtg;
 		this.roomSchedulerEndDtg = roomSchedulerEndDtg;
 		this.loginId = loginId;
+		this.subject = subject;
+		this.rooms = rooms;
 	}
-	
+
 	public Integer getRoomSchedulerId() {
 		return roomSchedulerId;
 	}
@@ -87,26 +94,20 @@ public class RoomScheduler {
 		this.loginId = loginId;
 	}
 
-	public java.util.Date getRoomSchedulerStartDtg() {
+	public LocalDateTime getRoomSchedulerStartDtg() {
 		return roomSchedulerStartDtg;
 	}
 
-	public void setRoomSchedulerStartDtg(java.util.Date roomSchedulerStartDtg) {
+	public void setRoomSchedulerStartDtg(LocalDateTime roomSchedulerStartDtg) {
 		this.roomSchedulerStartDtg = roomSchedulerStartDtg;
 	}
 
-	public java.util.Date getRoomSchedulerEndDtg() {
+	public LocalDateTime getRoomSchedulerEndDtg() {
 		return roomSchedulerEndDtg;
 	}
 
-	public void setRoomSchedulerEndDtg(java.util.Date roomSchedulerEndDtg) {
+	public void setRoomSchedulerEndDtg(LocalDateTime roomSchedulerEndDtg) {
 		this.roomSchedulerEndDtg = roomSchedulerEndDtg;
 	}
 
-	
-
-	
-	
-	
-	
 }
