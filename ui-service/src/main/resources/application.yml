@@ -1,6 +1,6 @@
 spring:
   application:
-    name: user-mgt-service
+    name: ui-service
 
 server:
   port: 7004
