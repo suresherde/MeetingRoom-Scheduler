@@ -22,3 +22,6 @@ zuul:
     stock-service:
       path: /user-mgt-service/**
       url: http://localhost:7002
+    ui-service:
+      path:/ui-service/**
+      url:http://localhost:7004
