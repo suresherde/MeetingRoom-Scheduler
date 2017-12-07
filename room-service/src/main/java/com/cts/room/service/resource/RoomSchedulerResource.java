@@ -83,10 +83,6 @@ public class RoomSchedulerResource {
 	@PostMapping("/getSchedulerByDatesByRoomName")
 	public List<RoomScheduler> getSchedulerByDatesByRoomName(@RequestBody final RoomSchedulers roomSchedulers){
 		RoomScheduler roomScheduler = roomSchedulerService.addSchedule(roomSchedulers);
-		System.out.println(roomScheduler.getRooms().getRoomName());
-		System.out.println(roomScheduler.getRoomSchedulerStartDtg());
-		System.out.println(roomScheduler.getRoomSchedulerEndDtg());
-		
 		return roomSchedulerRepository.findByRoomSchedulerByDtgAndRoom(roomScheduler.getRooms().getRoomName(), roomScheduler.getRoomSchedulerStartDtg(),
 				roomScheduler.getRoomSchedulerEndDtg());
 		
