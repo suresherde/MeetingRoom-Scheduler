@@ -19,7 +19,7 @@ zuul:
     db-service:
       path: /room-service/**
       url: http://localhost:7001
-    stock-service:
+    user-mgt-service:
       path: /user-mgt-service/**
       url: http://localhost:7002
     ui-service:
