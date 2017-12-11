@@ -19,7 +19,7 @@ public class EurekaServiceApplication {
 	}
 	
 	 @Bean
-	    public FilterRegistrationBean corsFilterRegistration() {
+	    public static FilterRegistrationBean corsFilterRegistration() {
 	        FilterRegistrationBean registrationBean =
 	                new FilterRegistrationBean(new CORSFilter());
 	        registrationBean.setName("CORS Filter");
