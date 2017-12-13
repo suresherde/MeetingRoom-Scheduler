@@ -3,6 +3,7 @@ package com.cts.user.service.resource;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,9 @@ public class LoginResource {
 	
 	@Autowired
 	RestTemplate restTemplate;
+	
+	@Autowired
+	FilterRegistrationBean filterRegistration;
 	
 	
 	@GetMapping("/getAllLogin")
