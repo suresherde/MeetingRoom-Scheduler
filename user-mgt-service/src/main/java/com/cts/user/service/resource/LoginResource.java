@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,6 +35,20 @@ public class LoginResource {
 	@GetMapping("/getAllLogin")
 	public List<Login> getAllLogin(){
 		return  loginRepository.findAll();
+	}
+	
+	@CrossOrigin
+	@PostMapping("/loginValidation")
+	public boolean getLoginValidation(@RequestBody final Logins logins){
+		Login login = loginService.getLogin(logins);
+		List<Login> loginResultSet= loginRepository.findByLoginNamePassword(login.getLoginName());
+				
+		if(loginService.validationPassword(logins, loginResultSet))
+		{
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	@PostMapping("/getLoginByName")
